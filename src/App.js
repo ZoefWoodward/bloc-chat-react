@@ -41,11 +41,16 @@ class App extends Component {
     
     
 render() {
+    
     const displayMessages = this.state.activeRoom;
     const activeUser = this.state.user === null ? 'Guest' : this.state.user.displayName;
-
+    
     return (
       <div className="App">
+        <nav>
+        <h2 className="app-title"> Bloc Chat </h2>
+        <User className="greeting" firebase={firebase} setUser={this.setUser.bind(this)} activeUser={activeUser} />
+        </nav>
         <aside className="list-rooms">
           <RoomList firebase={firebase} activeRoom={this.setActiveRoom.bind(this)} />
         </aside>
@@ -58,6 +63,8 @@ render() {
             (<MessageList firebase={firebase} activeRoom={this.state.activeRoom.key}/>)
             : (null)
             }
+            
+            
           </main>
         </div>
       </div>

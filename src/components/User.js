@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './../App.css';
 
 
-
 class User extends Component {
     constructor(props) {
         super(props)
@@ -13,10 +12,12 @@ class User extends Component {
     }
 
     logIn() {
-        const provider = new this.props.firebase.auth.GoogleAuthProvider(); this.props.firebase.auth().signInWithPopup(provider).then((result) => {
-            console.log("logged in");
-            const user = result.user;
-            this.props.setUser(user);
+            console.log("login called");
+            const provider = new this.props.firebase.auth.GoogleAuthProvider(); 
+            this.props.firebase.auth().signInWithPopup(provider).then((result) => {
+               console.log("logged in");
+               const user = result.user;
+               this.props.setUser(user);
         })
     }
 
