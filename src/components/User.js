@@ -38,9 +38,9 @@ class User extends Component {
         return (
             <section>
                 <div>
-                    <h3>Welcome, {this.props.user.displayName}!</h3>
+                    <h3>Welcome, {this.props.activeUser}!</h3>
 
-                    {this.props.user.displayName === 'Guest' ?
+                    {this.props.activeUser === 'Guest' ?
                         <button className="log-in" onClick={() => this.logIn()}>Log in</button>
                         :
                         <button className="log-out" onClick={() => this.logOut()}>Log out</button>
