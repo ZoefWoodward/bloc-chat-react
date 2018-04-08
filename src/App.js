@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
@@ -55,7 +54,7 @@ render() {
           <RoomList firebase={firebase} activeRoom={this.setActiveRoom.bind(this)} />
         </aside>
         <div>
-          <main className="active-chat-room">
+          <main className="active-chatroom">
             <h2>{this.state.activeRoom.name}</h2>
 
             {displayMessages ?

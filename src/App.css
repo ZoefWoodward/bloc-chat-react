@@ -1,47 +1,64 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-aside{
-    float: left;
-    text-align: center;
-}
-
-.current-message{
+.App > nav > h2, .app-title, .greeting, .list-rooms {
+    background-color: whitesmoke;
     padding: 10px;
+    color: #555657;
+    font-family: lato;
+    
+    max-width: 250px;
+    min-width: 250px;
+    display: block;
+}
+
+.app-title {
+    font-size: 32px;
+    text-align: left;
+    width: 50%;
+    float: left;  
     text-align: center;
 }
 
-nav{
-    padding: 20px;
-}
-
-input[type=text]{
+.greeting {
+    text-align: left;
     width: 50%;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+.list-rooms {
+    float: left;
+    text-align: left;
+    max-width: 50%;    
+    background-color: whitesmoke;
+    height: 1000em;
+    width: 250px;
+}
+
+#deleteButton {
+    
 }
 
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.active-chatroom, .chatroom-messages, .current-message{
+    font-family: lato;
+    color: #555657;
+    padding: 10px;
+    display: block;
+    float: left;
+    width: 400px;
+    min-width: 250px;
+    text-align: center;
+    
+}
+.active-chatroom, .chatroom-messages {
+}
+
+.current-message {
+    
+}
+
+
+
+.chatroom-messages input[type=text]{
+    width: 100%;
 }

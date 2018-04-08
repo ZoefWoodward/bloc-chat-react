@@ -60,7 +60,7 @@ class RoomList extends Component {
                         <ul>
                             {this.state.rooms.map( (room) => {
                             return (
-                                <div key={room.key} onClick={(e) => this.selectRoom(room, e)}> {room.name} 
+                                <div key={room.key} onClick={(e) => this.selectRoom(room, e)}> {room.name}
                                 <button id="deleteRoom" onClick={() => this.deleteRoom(room.key)}>Delete</button>
                                 </div>
                                 

@@ -38,7 +38,7 @@ class User extends Component {
     render() {
         return (
             <section>
-                <div>
+                <div className="greeting">
                     <h3>Welcome, {this.props.activeUser}!</h3>
 
                     {this.props.activeUser === 'Guest' ?
