@@ -82,7 +82,6 @@ class MessageList extends Component {
                 <div className="chatroom-messages">
                     <div>{messageList}
                     </div>
-           
                     <form onSubmit={(e) => this.handleSubmit(e)}>
                         <input type="text" name="newmessage" placeholder="New Message" value={this.state.content} 
                         onChange={(e) => this.handleChange(e)} />

@@ -34,7 +34,6 @@ class User extends Component {
         });
     }
 
-
     render() {
         return (
             <section>

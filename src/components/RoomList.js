@@ -62,8 +62,7 @@ class RoomList extends Component {
                             return (
                                 <div key={room.key} onClick={(e) => this.selectRoom(room, e)}> {room.name}
                                 <button id="deleteRoom" onClick={() => this.deleteRoom(room.key)}>Delete</button>
-                                </div>
-                                
+                                </div> 
                             )
                             })}
                         <form onSubmit={(e) => this.handleSubmit(e)}>
