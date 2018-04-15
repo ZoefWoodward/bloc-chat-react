@@ -1,0 +1,33 @@
+#deleteRoom {
+    text-align: center;
+    color: red;
+    background-color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    border: none;
+}
+
+.list-names {
+    text-align: left;
+    padding: 10px;
+    
+}
+
+.list-rooms input[type=text] {
+    border: none;
+    width: 80%;
+    color: dimgrey;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.list-rooms button[type=submit]{
+    padding: 10px;
+    color: dimgrey;
+    border: none;
+}
+
+.room-list button{
+    padding: 10px;
+}

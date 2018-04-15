@@ -70,11 +70,9 @@ class MessageList extends Component {
     
     render() {
         const activeRoom = this.props.activeRoom;
-        const messageList = this.state.messages
-        .filter(message => message.roomId === activeRoom)
-        .map(message => {
+        const messageList = this.state.messages.filter(message => message.roomId === activeRoom).map(message => {
             return <div className="current-message" key={message.key}>{message.username}: {message.content}
-            <button id="deleteMessage" onClick={() => this.deleteMessage(message.key)}>Delete</button>
+            <button id="deleteMessage" onClick={() => this.deleteMessage(message.key)}>x</button>
             </div>
         })
        
@@ -83,7 +81,7 @@ class MessageList extends Component {
                     <div>{messageList}
                     </div>
                     <form onSubmit={(e) => this.handleSubmit(e)}>
-                        <input type="text" name="newmessage" placeholder="New Message" value={this.state.content} 
+                        <input type="text" name="newmessage" placeholder="Write your message here..." value={this.state.content} 
                         onChange={(e) => this.handleChange(e)} />
                         <button type="submit" onClick={(e) => this.createMessage(e)}>Send</button>
                         </form>

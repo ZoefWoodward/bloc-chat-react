@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import './components/User.css';
+import './components/RoomList.css';
+import './components/MessageList.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
@@ -35,7 +38,6 @@ class App extends Component {
     setUser(user){
         this.setState({user: user})
         console.log(user);
-        
     }
     
     
@@ -46,17 +48,19 @@ render() {
     
     return (
       <div className="App">
-        <nav>
-        <h2 className="app-title"> Bloc Chat </h2>
-        <User className="greeting" firebase={firebase} setUser={this.setUser.bind(this)} activeUser={activeUser} />
-        </nav>
+        <div className="column-left">
+            <nav>
+                <h2 className="app-title"> Bloc Chat </h2>
+                <User className="greeting" firebase={firebase} setUser={this.setUser.bind(this)} activeUser={activeUser} />
+            </nav>
         <aside className="list-rooms">
           <RoomList firebase={firebase} activeRoom={this.setActiveRoom.bind(this)} />
         </aside>
-        <div>
+        </div>
+        <div className="column-right">
           <main className="active-chatroom">
             <h2>{this.state.activeRoom.name}</h2>
-
+            
             {displayMessages ?
 
             (<MessageList firebase={firebase} activeRoom={this.state.activeRoom.key} user={activeUser}/>)

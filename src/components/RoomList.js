@@ -57,20 +57,18 @@ class RoomList extends Component {
             return (
                 <section className= "room-list">
                     <div className= "list-names">
-                        <ul>
                             {this.state.rooms.map( (room) => {
                             return (
                                 <div key={room.key} onClick={(e) => this.selectRoom(room, e)}> {room.name}
-                                <button id="deleteRoom" onClick={() => this.deleteRoom(room.key)}>Delete</button>
+                                <button id="deleteRoom" onClick={() => this.deleteRoom(room.key)}>x</button>
                                 </div> 
                             )
                             })}
+                            </div>
                         <form onSubmit={(e) => this.handleSubmit(e)}>
-                            <input type="text" name="newroom" placeholder="New Room" value={this.state.newRoom} onChange={(e) => this.handleChange(e)} />
+                            <input type="text" name="newroom" placeholder="Enter New Room..." value={this.state.newRoom} onChange={(e) => this.handleChange(e)} />
                             <button type="submit" onClick={() => this.createRoom()}>Create Room</button>
                         </form>
-                        </ul>
-                    </div>
                 </section>
         );
         }
