@@ -80,12 +80,13 @@ class MessageList extends Component {
                 <div className="chatroom-messages">
                     <div>{messageList}
                     </div>
-                    <form onSubmit={(e) => this.handleSubmit(e)}>
+                    <form id="message-input" onSubmit={(e) => this.handleSubmit(e)}>
                         <input type="text" name="newmessage" placeholder="Write your message here..." value={this.state.content} 
                         onChange={(e) => this.handleChange(e)} />
                         <button type="submit" onClick={(e) => this.createMessage(e)}>Send</button>
                         </form>
-                    </div>   
+                    </div>  
+                
         );
     }
 }

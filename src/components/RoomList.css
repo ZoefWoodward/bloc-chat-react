@@ -10,24 +10,24 @@
 .list-names {
     text-align: left;
     padding: 10px;
+    color: dimgrey;
     
 }
 
-.list-rooms input[type=text] {
+.room-list input[type=text] {
     border: none;
     width: 80%;
-    color: dimgrey;
     padding: 10px;
     text-align: center;
 }
 
 
-.list-rooms button[type=submit]{
+.room-list button[type=submit]{
     padding: 10px;
     color: dimgrey;
     border: none;
 }
 
 .room-list button{
-    padding: 10px;
+    margin-top: 10px;
 }
