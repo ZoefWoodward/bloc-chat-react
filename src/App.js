@@ -7,6 +7,7 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
+import Ionicon from 'react-ionicons';
 
   // Initialize Firebase
   var config = {
@@ -46,11 +47,12 @@ render() {
     const displayMessages = this.state.activeRoom;
     const activeUser = this.state.user === null ? 'Guest' : this.state.user.displayName;
     
+    
     return (
       <div className="App">
         <div className="column-left">
             <nav>
-                <h2 className="app-title"> Bloc Chat </h2>
+                <h2 className="app-title"> <b>chatter</b>box <Ionicon icon="ios-people" fontSize="28px" color="#6F8FD9" /></h2>
                 <User className="greeting" firebase={firebase} setUser={this.setUser.bind(this)} activeUser={activeUser} />
             </nav>
         <aside className="list-rooms">

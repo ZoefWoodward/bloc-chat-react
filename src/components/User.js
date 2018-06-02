@@ -38,7 +38,7 @@ class User extends Component {
         return (
             <section>
                 <div className="greeting">
-                    <h3>Welcome, {this.props.activeUser}!</h3>
+                    <p>Welcome, {this.props.activeUser}!</p>
 
                     {this.props.activeUser === 'Guest' ?
                         <button className="log-in" onClick={() => this.logIn()}>Log in</button>

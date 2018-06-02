@@ -1,7 +1,7 @@
 .active-chatroom > h2 {
     min-height: 100%;
     text-align: center;
-    font-weight: 300;
+    font-weight: 600;
     color: dimgrey;    
 }
 
@@ -16,12 +16,12 @@
     padding: 10px;
 }
 
-#deleteMessage {  
-   text-align: right;
-    color: red;
-    font-family: inherit;
-    font-size: 14px;
+#deleteMessage{
     border: none;
+    color: dimgray;
+    float: right;
+    padding-right: 5px;
+    padding-top: 10px;
 }
 
 .chatroom-messages > form{
@@ -35,22 +35,50 @@
 
 .chatroom-messages input[type=text]{
     height: 50px;
+    width: 60%;
     font-size: 14px;
-    width: 50%;
-    background-color: aliceblue;
+    background-color: whitesmoke;
     border: none;
-    position: relative;
     float: left;
 }
 
 
 .chatroom-messages button[type=submit]{
     height: 52px;
-    width: 49%;
+    width: 10%;
     border: none;
-    background-color: darkgray;
-    color: whitesmoke;
+    background-color: whitesmoke;
     font-size: 14px;
+    float: left;
+}
+
+#message-input input[type=text]{
+    padding-left: 10px;
+}
+
+.chat-bubble{
+    background-color: white;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    width: 20%;
+    text-align: left;
+    padding: 1px;
+    padding-right: 10px;
+    position: absolute;
+    margin: 20px;
+    box-shadow: 2px 2px 20px 2px darkgray;
+}
+
+.username{
+    color: #3CA9A9;
+    font-size: 14px;
+}
+
+.wasDate{
     float: right;
-    position: relative;
+    padding: 20px;
+    text-align: center;
+    color: #6F8FD9;
+    font-weight: 200;
+    font-size: 10px;
 }

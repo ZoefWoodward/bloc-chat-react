@@ -2,7 +2,7 @@
     float: left;
     width: 30%;
     height: 800px;
-    background-color: whitesmoke;
+    background-color: white;
     max-width: 30%;
     overflow-x: auto;
     text-align: center;
@@ -13,6 +13,7 @@
     width: 70%;
     height: 800px;
     overflow-y: scroll;
+    background-color: #DDE1EB;
 }
 
 .column-left, .column-right{
@@ -23,4 +24,11 @@
     font-size: 32px;
     color: dimgrey;
     font-weight: 300;
+}
+
+.active-chatroom > h2{
+    background-color: whitesmoke;
+    height: 60px;
+    margin-top: 0px;
+    padding-top: 20px;
 }

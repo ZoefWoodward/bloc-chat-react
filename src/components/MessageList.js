@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './../App.css';
-
-
+import Ionicon from 'react-ionicons';
+import Time from 'react-time';
 class MessageList extends Component {
     constructor(props) {
     super(props)
@@ -19,7 +19,6 @@ class MessageList extends Component {
       
     };
     
-    
         componentDidMount() {
         this.messagesRef.on('child_added', snapshot => {
             const message = snapshot.val();
@@ -28,7 +27,16 @@ class MessageList extends Component {
                 messages: this.state.messages.concat(message),
             })
         });
+            this.scrollToBottom();
             
+        }
+    
+        componentDidUpdate() {
+            this.scrollToBottom();
+        }
+    
+        scrollToBottom = () => {
+            this.messagesEnd.scrollIntoView({behavior: "smooth"});
         }
             
         handleChange(e){
@@ -62,7 +70,7 @@ class MessageList extends Component {
                 username: this.state.username,
                 sentAt: this.state.sentAt,
                 roomId: this.props.activeRoom,
-                content: this.state.content
+                content: this.state.content,
             
             });
         }
@@ -71,8 +79,17 @@ class MessageList extends Component {
     render() {
         const activeRoom = this.props.activeRoom;
         const messageList = this.state.messages.filter(message => message.roomId === activeRoom).map(message => {
-            return <div className="current-message" key={message.key}>{message.username}: {message.content}
-            <button id="deleteMessage" onClick={() => this.deleteMessage(message.key)}>x</button>
+            return <div className="message-container">
+                <div className="chat-bubble"> 
+                    <button id="deleteMessage" onClick={() => this.deleteMessage(message.key)}>
+                        <Ionicon icon="ios-close" fontSize="15px" color="dimgray" /></button>
+                            <div className="current-message" key={message.key}>{message.content}
+            
+                    <p className="username">{message.username}</p>
+                </div>
+            </div>
+                    <p className="wasDate"><Time value={message.sentAt} titleFormat="YYYY/MM/DD HH:mm" relative/>
+                </p>
             </div>
         })
        
@@ -81,13 +98,18 @@ class MessageList extends Component {
                     <div>{messageList}
                     </div>
                     <form id="message-input" onSubmit={(e) => this.handleSubmit(e)}>
+            
                         <input type="text" name="newmessage" placeholder="Write your message here..." value={this.state.content} 
                         onChange={(e) => this.handleChange(e)} />
-                        <button type="submit" onClick={(e) => this.createMessage(e)}>Send</button>
-                        </form>
-                    </div>  
                 
+                        <button id="ios-send" type="submit" onClick={(e) => this.createMessage(e)}><Ionicon icon="ios-send" color="dimgray" fontSize="40px" padding="10px"/></button>
+                        </form>
+
+                    <div style={{ float: "left", clear: "both" }}
+                    ref={(el) => {this.messagesEnd = el; }}></div>
+                    </div>  
         );
+
     }
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './../App.css';
+import Ionicon from 'react-ionicons';
 
 
 class RoomList extends Component {
@@ -56,19 +57,22 @@ class RoomList extends Component {
         render() {
             return (
                 <section className= "room-list">
+                <p id="chatroom-title"> YOUR CHATS </p>
                     <div className= "list-names">
                             {this.state.rooms.map( (room) => {
                             return (
-                                <div key={room.key} onClick={(e) => this.selectRoom(room, e)}> {room.name}
-                                <button id="deleteRoom" onClick={() => this.deleteRoom(room.key)}>x</button>
+                                <div key={room.key} onClick={(e) => this.selectRoom(room, e)}><Ionicon icon="ios-cube" fontSize="20px" color="#5FD1D1" /> {room.name}
+                                <button id="deleteRoom" onClick={() => this.deleteRoom(room.key)}><Ionicon icon="ios-close" fontSize="15px" color="dimgray" /></button>
                                 </div> 
                             )
                             })}
                             </div>
+                    <div className="create-room-text">
                         <form onSubmit={(e) => this.handleSubmit(e)}>
-                            <input type="text" name="newroom" placeholder="Enter New Room..." value={this.state.newRoom} onChange={(e) => this.handleChange(e)} />
-                            <button type="submit" onClick={() => this.createRoom()}>Create Room</button>
+                            <input type="text" name="newroom" placeholder="Create New Room..." value={this.state.newRoom} onChange={(e) => this.handleChange(e)} />
+                            <button type="submit" onClick={() => this.createRoom()}><Ionicon icon="ios-add-circle-outline" fontSize="35px" color="dimgray"/></button>
                         </form>
+                    </div>
                 </section>
         );
         }
