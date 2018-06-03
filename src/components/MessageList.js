@@ -79,18 +79,15 @@ class MessageList extends Component {
     render() {
         const activeRoom = this.props.activeRoom;
         const messageList = this.state.messages.filter(message => message.roomId === activeRoom).map(message => {
-            return <div className="message-container">
-                <div className="chat-bubble"> 
-                    <button id="deleteMessage" onClick={() => this.deleteMessage(message.key)}>
-                        <Ionicon icon="ios-close" fontSize="15px" color="dimgray" /></button>
-                            <div className="current-message" key={message.key}>{message.content}
             
-                    <p className="username">{message.username}</p>
-                </div>
-            </div>
-                    <p className="wasDate"><Time value={message.sentAt} titleFormat="YYYY/MM/DD HH:mm" relative/>
-                </p>
-            </div>
+            return <div className="message-container">
+                        <div className="chat-bubble"><button id="deleteMessage" onClick={() => this.deleteMessage(message.key)}>
+                        <Ionicon icon="ios-close" fontSize="15px" color="dimgray" /></button> 
+                            <div className="current-message" key={message.key}>{message.content} 
+                            <div className="username">{message.username}</div> 
+                            </div> 
+                        </div><div className="wasDate"><Time value={message.sentAt} titleFormat="YYYY/MM/DD HH:mm" relative/></div>
+                    </div> 
         })
        
         return (

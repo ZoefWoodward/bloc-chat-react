@@ -6,12 +6,13 @@
     max-width: 30%;
     overflow-x: auto;
     text-align: center;
+    position: fixed;
 }
 
 .column-right{
-    float: left;
     width: 70%;
-    height: 800px;
+    height: 751px;
+    margin-left: 30%;
     overflow-y: scroll;
     background-color: #DDE1EB;
 }
@@ -24,11 +25,14 @@
     font-size: 32px;
     color: dimgrey;
     font-weight: 300;
+    
 }
 
 .active-chatroom > h2{
     background-color: whitesmoke;
     height: 60px;
-    margin-top: 0px;
     padding-top: 20px;
+    position: sticky;
+    margin-top: 0px;
+    top: 0;
 }
