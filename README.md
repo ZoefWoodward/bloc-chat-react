@@ -1,6 +1,6 @@
 This project was fully customized and styled in addtition to Bloc base requirements, by Zoe Woodward. Bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-<a href="http://tinypic.com?ref=fy0jva" target="_blank"><img src="http://i64.tinypic.com/fy0jva.png" border="0" alt="Image and video hosting by TinyPic"></a>
+<a href="http://tinypic.com?ref=e80sj5" target="_blank"><img src="http://i66.tinypic.com/e80sj5.png" border="0" alt="Image of Project"></a>
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
